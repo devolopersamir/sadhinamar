@@ -88,6 +88,7 @@
       text-align: center;
       padding: 0 20px;
       animation: fadeIn 3s ease-out;
+      z-index: 10; /* Ensure hero section stays on top */
     }
 
     @keyframes fadeIn {
@@ -119,6 +120,7 @@
       overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1; /* Ensure slider stays below the hero section */
     }
     .slides {
       display: flex;
