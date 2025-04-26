@@ -126,15 +126,48 @@
       text-align: center;
       margin-top: 40px;
     }
-  </style>
-  <script>
-    function toggleMenu() {
-      var nav = document.getElementById('nav');
-      nav.classList.toggle('active');
-      var menuToggle = document.querySelector('.menu-toggle');
-      menuToggle.classList.toggle('active');
+
+    /* Slider Style */
+    .slider {
+      margin: 40px auto;
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     }
-  </script>
+    .slides {
+      display: flex;
+      transition: transform 1s ease;
+    }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+    .prev, .next {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
 </head>
 <body>
 
@@ -158,6 +191,18 @@
     <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
   </div>
 
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
+      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="Image 2">
+    </div>
+    <div class="slider-controls">
+      <span class="prev" onclick="prevSlide()">&#10094;</span>
+      <span class="next" onclick="nextSlide()">&#10095;</span>
+    </div>
+  </div>
+
   <section id="about">
     <h2>আমাদের সম্পর্কে</h2>
     <p>"আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রচেষ্টা। আমরা বিশ্বাস করি স্বাধীনচেতা মেধাই ভবিষ্যৎ গড়বে।</p>
@@ -178,5 +223,28 @@
     © ২০২৫ আইসিটি স্বাধীন কুইজ | সব অধিকার সংরক্ষিত
   </footer>
 
+  <script>
+    let slideIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.getElementById('slides');
+      const totalSlides = document.querySelectorAll('.slides img').length;
+      if (index >= totalSlides) slideIndex = 0;
+      if (index < 0) slideIndex = totalSlides - 1;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+      slideIndex--;
+      showSlide(slideIndex);
+    }
+
+    showSlide(slideIndex); // Initialize first slide
+  </script>
 </body>
 </html>
