@@ -57,33 +57,44 @@
         right: 20px;
         padding: 10px;
         border-radius: 8px;
+        opacity: 0;
+        animation: fadeInMenu 0.5s forwards;
       }
       nav.active {
         display: flex;
+        opacity: 1;
       }
       .menu-toggle {
         display: flex;
       }
     }
+    @keyframes fadeInMenu {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Hero Section */
     .hero {
-      background: none; /* Background removed */
+      background: none;
       height: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #059669; /* Text color green */
-      font-family: 'SolaimanLipi', sans-serif; /* SolaimanLipi font */
+      color: #059669;
+      font-family: 'SolaimanLipi', sans-serif;
       font-size: 2.5rem;
-      font-weight: bold; /* Bold text */
+      font-weight: bold;
       text-align: center;
       padding: 0 20px;
       animation: fadeIn 3s ease-out;
     }
+
     @keyframes fadeIn {
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
+
     .button {
       display: inline-block;
       background-color: #10b981;
@@ -95,9 +106,12 @@
       margin-top: 20px;
       transition: background 0.3s;
     }
+
     .button:hover {
       background-color: #34d399;
     }
+
+    /* Slider */
     .slider {
       margin: 40px auto;
       width: 300px;
@@ -124,14 +138,17 @@
       80% { transform: translateX(0); }
       100% { transform: translateX(0); }
     }
+
     section {
       padding: 40px 20px;
       text-align: center;
     }
+
     section h2 {
       color: #059669;
       margin-bottom: 20px;
     }
+
     footer {
       background: #065f46;
       padding: 20px;
@@ -139,11 +156,43 @@
       text-align: center;
       margin-top: 40px;
     }
+
+    /* Menu Buttons */
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeInButtons 1s forwards;
+    }
+
+    @keyframes fadeInButtons {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .menu-buttons a {
+      background-color: #059669;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .menu-buttons a:hover {
+      background-color: #10b981;
+    }
+
   </style>
   <script>
     function toggleMenu() {
       var nav = document.getElementById('nav');
       nav.classList.toggle('active');
+      var buttons = document.getElementById('menu-buttons');
+      buttons.classList.toggle('active');
     }
   </script>
 </head>
@@ -157,13 +206,15 @@
       <span></span>
     </div>
     <nav id="nav">
-      <a href="#home">হোম পেইজ</a>
-      <a href="#about">আমাদের সম্পর্কে</a>
-      <a href="#quiz">আইসিটি স্বাধীন কুইজ প্রতিযোগিতা-২৫</a>
-      <a href="#leaders">ক্যাম্পাস লিডার্স</a>
-      <a href="#girls">প্রিমিয়ার গার্লস</a>
-      <a href="#press">প্রেস এবং মিডিয়া</a>
-      <a href="#collaborations">সহযোগিতা</a>
+      <div class="menu-buttons" id="menu-buttons">
+        <a href="#home">হোম পেইজ</a>
+        <a href="#about">আমাদের সম্পর্কে</a>
+        <a href="#quiz">আইসিটি স্বাধীন কুইজ প্রতিযোগিতা-২৫</a>
+        <a href="#leaders">ক্যাম্পাস লিডার্স</a>
+        <a href="#girls">প্রিমিয়ার গার্লস</a>
+        <a href="#press">প্রেস এবং মিডিয়া</a>
+        <a href="#collaborations">সহযোগিতা</a>
+      </div>
     </nav>
   </header>
 
