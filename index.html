@@ -26,5 +26,169 @@
       margin: 0;
       font-size: 1.8rem;
     }
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
     nav {
-      display
+      display: flex;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    /* Side navigation (sidenav) */
+    #nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #059669;
+      padding-top: 50px;
+      z-index: 1000;
+    }
+
+    #nav a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    #nav a:hover {
+      background-color: #34d399;
+    }
+
+    .menu-toggle.active + #nav {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: none; 
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #059669;
+      font-family: 'SolaimanLipi', sans-serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #10b981;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #34d399;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #059669;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #065f46;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+  </style>
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById('nav');
+      var menuToggle = document.querySelector('.menu-toggle');
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>আইসিটি স্বাধীন কুইজ</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav">
+      <a href="#home">হোম পেইজ</a>
+      <a href="#about">আমাদের সম্পর্কে</a>
+      <a href="#quiz">আইসিটি স্বাধীন কুইজ প্রতিযোগিতা-২৫</a>
+      <a href="#leaders">ক্যাম্পাস লিডার্স</a>
+      <a href="#girls">প্রিমিয়ার গার্লস</a>
+      <a href="#press">প্রেস এবং মিডিয়া</a>
+      <a href="#cooperation">সহযোগিতা</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Text -->
+  <div class="hero" id="home">
+    স্বাধীনতার চেতনায় প্রযুক্তির জয়!
+    <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
+  </div>
+
+  <section id="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>"আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রচেষ্টা। আমরা বিশ্বাস করি স্বাধীনচেতা মেধাই ভবিষ্যৎ গড়বে।</p>
+  </section>
+
+  <section id="quiz">
+    <h2>কুইজে অংশগ্রহণ করো</h2>
+    <p>দক্ষতা যাচাই করে জিতে নাও সম্মাননা ও পুরস্কার!</p>
+    <a href="#" class="button">কুইজ শুরু করো</a>
+  </section>
+
+  <section id="contact">
+    <h2>যোগাযোগ</h2>
+    <p>প্রশ্ন বা তথ্যের জন্য আমাদের সাথে যোগাযোগ করো: <br> 📞 ০১২৩৪৫৬৭৮৯০ <br> ✉️ info@swadhinquiz.com</p>
+  </section>
+
+  <footer>
+    © ২০২৫ আইসিটি স্বাধীন কুইজ | সব অধিকার সংরক্ষিত
+  </footer>
+
+</body>
+</html>
