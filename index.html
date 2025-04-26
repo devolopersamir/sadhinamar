@@ -66,17 +66,22 @@
       }
     }
     .hero {
-      background: #059669;
+      background: none; /* Background removed */
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-family: 'Hind Siliguri', sans-serif;
+      color: #059669; /* Text color green */
+      font-family: 'SolaimanLipi', sans-serif; /* SolaimanLipi font */
       font-size: 2.5rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      font-weight: bold; /* Bold text */
       text-align: center;
       padding: 0 20px;
+      animation: fadeIn 3s ease-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
     .slider {
       margin: 40px auto;
@@ -160,7 +165,7 @@
 
   <!-- Hero Section with Text -->
   <div class="hero" id="home">
-    স্বাধীনতার চেতনায় প্রযুক্তির জয়!
+    "স্বাধীনতার চেতনায় প্রযুক্তির জয়!"
   </div>
 
   <!-- স্কয়ার স্লাইডার শুরু -->
