@@ -35,17 +35,33 @@
       text-decoration: none;
       font-size: 1rem;
     }
+    /* Updated Three Dots Menu */
     .menu-toggle {
-      display: none;
+      display: flex;
       flex-direction: column;
       cursor: pointer;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
     }
     .menu-toggle span {
-      height: 3px;
-      width: 25px;
+      height: 4px;
+      width: 30px;
       background: white;
-      margin: 4px 0;
       border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .menu-toggle:hover span {
+      background: #34d399; /* Green color on hover */
+    }
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
     @media (max-width: 768px) {
       nav {
@@ -61,21 +77,18 @@
       nav.active {
         display: flex;
       }
-      .menu-toggle {
-        display: flex;
-      }
     }
     .hero {
-      background: none; /* Background removed */
+      background: none;
       height: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #059669; /* Text color green */
-      font-family: 'SolaimanLipi', sans-serif; /* SolaimanLipi font */
+      color: #059669;
+      font-family: 'SolaimanLipi', sans-serif;
       font-size: 2.5rem;
-      font-weight: bold; /* Bold text */
+      font-weight: bold;
       text-align: center;
       padding: 0 20px;
       animation: fadeIn 3s ease-out;
@@ -98,32 +111,6 @@
     .button:hover {
       background-color: #34d399;
     }
-    .slider {
-      margin: 40px auto;
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-    .slides {
-      display: flex;
-      width: calc(300px * 2);
-      animation: slide 6s infinite;
-    }
-    .slides img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      20% { transform: translateX(0); }
-      40% { transform: translateX(-300px); }
-      60% { transform: translateX(-300px); }
-      80% { transform: translateX(0); }
-      100% { transform: translateX(0); }
-    }
     section {
       padding: 40px 20px;
       text-align: center;
@@ -144,6 +131,8 @@
     function toggleMenu() {
       var nav = document.getElementById('nav');
       nav.classList.toggle('active');
+      var menuToggle = document.querySelector('.menu-toggle');
+      menuToggle.classList.toggle('active');
     }
   </script>
 </head>
@@ -164,20 +153,10 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Text -->
   <div class="hero" id="home">
     স্বাধীনতার চেতনায় প্রযুক্তির জয়!
     <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
   </div>
-
-  <!-- স্কয়ার স্লাইডার শুরু -->
-  <div class="slider">
-    <div class="slides">
-      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
-      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="Image 2">
-    </div>
-  </div>
-  <!-- স্কয়ার স্লাইডার শেষ -->
 
   <section id="about">
     <h2>আমাদের সম্পর্কে</h2>
