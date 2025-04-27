@@ -7,16 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
   <style>
-    /* Main Body */
     body {
       font-family: 'SolaimanLipi', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0fdf4;
+      background: #ecfdf5;
       color: #064e3b;
     }
-
-    /* Header */
     header {
       background: linear-gradient(90deg, #10b981, #059669);
       padding: 20px;
@@ -24,31 +21,25 @@
       justify-content: space-between;
       align-items: center;
       color: white;
-      position: relative;
     }
-
     header h1 {
       margin: 0;
       font-size: 1.8rem;
     }
-
     nav {
       display: flex;
     }
-
     nav a {
       color: white;
       margin: 0 10px;
       text-decoration: none;
       font-size: 1rem;
     }
-
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
     }
-
     .menu-toggle span {
       height: 3px;
       width: 25px;
@@ -56,8 +47,6 @@
       margin: 4px 0;
       border-radius: 2px;
     }
-
-    /* Responsive Menu */
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -72,43 +61,10 @@
       nav.active {
         display: flex;
       }
-
       .menu-toggle {
         display: flex;
       }
-
-      .threedot-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 100;
-      }
-
-      .threedot-menu div {
-        background: white;
-        width: 25px;
-        height: 3px;
-        margin: 4px;
-        transition: 0.4s;
-        border-radius: 2px;
-      }
-
-      /* Display the three-dot menu */
-      .threedot-menu.active div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      .threedot-menu.active div:nth-child(2) {
-        opacity: 0;
-      }
-
-      .threedot-menu.active div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
     }
-
     /* Hero Section */
     .hero {
       height: 300px;
@@ -116,31 +72,29 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: #059669;
+      font-family: 'SolaimanLipi', sans-serif;
       font-size: 2.5rem;
       font-weight: bold;
+      text-align: center;
+      padding: 0 20px;
       animation: fadeIn 3s ease-out;
-      margin: 20px 0;
     }
-
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
-
     .button {
-      margin-top: 20px;
-      padding: 12px 25px;
+      display: inline-block;
       background-color: #10b981;
       color: white;
-      border: none;
-      border-radius: 8px;
+      padding: 15px 30px;
       text-decoration: none;
+      border-radius: 8px;
       font-size: 1.2rem;
-      transition: 0.3s;
+      margin-top: 20px;
+      transition: background 0.3s;
     }
-
     .button:hover {
       background-color: #34d399;
     }
@@ -150,7 +104,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 0 20px 40px;
+      padding: 20px;
     }
 
     .card {
@@ -176,15 +130,7 @@
       color: #065f46;
     }
 
-    /* Footer */
-    footer {
-      background: #065f46;
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-
-    /* Marquee */
+    /* Notice */
     .notice p {
       display: inline-block;
       padding-left: 100%;
@@ -196,6 +142,72 @@
       100% { transform: translateX(-100%); }
     }
 
+    /* Footer */
+    footer {
+      background: #065f46;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Thrice Dot Menu */
+    .threedot-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .threedot-menu div {
+      background-color: #059669;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .threedot-menu.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .threedot-menu.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .threedot-menu.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu-options {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: #059669;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+    }
+
+    .menu-options a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin: 5px 0;
+      transition: background 0.3s;
+    }
+
+    .menu-options a:hover {
+      background-color: #34d399;
+    }
+
+    .threedot-menu.active + .menu-options {
+      display: block;
+    }
   </style>
   <script>
     function toggleMenu() {
@@ -245,23 +257,30 @@
     <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
   </div>
 
-  <!-- স্কয়ার স্লাইডার শুরু -->
-  <div class="slider">
-    <div class="slides">
-      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
-      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="Image 2">
-    </div>
-  </div>
-  <!-- স্কয়ার স্লাইডার শেষ -->
-
   <!-- Notice Section -->
   <section class="notice">
     <p>স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।</p>
   </section>
 
+  <!-- Card Section -->
+  <section class="cards">
+    <div class="card">
+      <h3>কুইজ ১</h3>
+      <p>প্রথম কুইজে অংশগ্রহণ করে প্রযুক্তির নতুন দিক সম্পর্কে জানুন।</p>
+    </div>
+    <div class="card">
+      <h3>কুইজ ২</h3>
+      <p>দ্বিতীয় কুইজে অংশগ্রহণ করে আপনার আইসিটি জ্ঞান যাচাই করুন।</p>
+    </div>
+    <div class="card">
+      <h3>কুইজ ৩</h3>
+      <p>তৃতীয় কুইজে অংশগ্রহণ করে প্রযুক্তির আরও গভীরে প্রবেশ করুন।</p>
+    </div>
+  </section>
+
   <section id="about">
     <h2>আমাদের সম্পর্কে</h2>
-    <p style="font-size: 1.4rem;">"আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রচেষ্টা। আমাদের লক্ষ্য হল শিক্ষার্থীদের মধ্যে আইসিটি বিষয়ে সচেতনতা তৈরি করে তাদের দক্ষতা বৃদ্ধি করা, যাতে তারা ভবিষ্যতে প্রযুক্তির ক্ষেত্রে অগ্রগামী হয়ে উঠতে পারে। এই কুইজটি শুধু একটি প্রতিযোগিতা নয়, এটি একটি যাত্রা, যা শিক্ষার্থীদের জন্য নতুন প্রযুক্তি সম্পর্কে জানার সুযোগ এনে দেয়। আমরা বিশ্বাস করি স্বাধীনচেতা মেধাই ভবিষ্যৎ গড়বে।</p>
+    <p>আইসিটি স্বাধীন কুইজ একটি তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির প্রচেষ্টা।</p>
   </section>
 
   <section id="quiz">
