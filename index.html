@@ -7,41 +7,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: 'SolaimanLipi', sans-serif;
-      background: #f0fdfa;
+      margin: 0;
+      padding: 0;
+      background: #ecfdf5;
       color: #064e3b;
     }
     header {
-      background: linear-gradient(90deg, #059669, #10b981);
-      padding: 15px 30px;
+      background: linear-gradient(90deg, #10b981, #059669);
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      color: white;
     }
     header h1 {
+      margin: 0;
       font-size: 1.8rem;
-      color: white;
     }
     nav a {
       color: white;
-      margin-left: 20px;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #d1fae5;
+      font-size: 1rem;
     }
     .notice-bar {
       background: #bbf7d0;
@@ -60,65 +49,88 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+    .hero {
+      background: none;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #059669;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #10b981;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #34d399;
+    }
+    /* স্কয়ার স্লাইডার স্টাইল */
     .slider {
-      position: relative;
+      margin: 40px auto;
+      width: 320px;
+      height: 320px;
       overflow: hidden;
-      height: 400px;
-      background: #ecfdf5;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
     .slides {
       display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slideAnimation 12s infinite;
+      width: calc(320px * 2);
+      height: 320px;
+      animation: slide 6s infinite;
     }
-    .slide {
-      flex: 1 0 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #065f46;
-      background-size: cover;
-      background-position: center;
-      transition: background 0.5s;
+    .slides img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
     }
-    .slide1 { background-image: url('https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg'); }
-    .slide2 { background-image: url('https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg'); }
-    .slide3 { background: linear-gradient(#d1fae5, #bbf7d0); }
-
-    @keyframes slideAnimation {
-      0% {transform: translateX(0);}
-      30% {transform: translateX(0);}
-      33% {transform: translateX(-100%);}
-      63% {transform: translateX(-100%);}
-      66% {transform: translateX(-200%);}
-      96% {transform: translateX(-200%);}
-      100% {transform: translateX(0);}
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(0); }
+      40% { transform: translateX(-320px); }
+      60% { transform: translateX(-320px); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
     }
     section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section h2 {
+      color: #059669;
+      margin-bottom: 20px;
     }
     .card {
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
       margin-bottom: 40px;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
     footer {
       background: #065f46;
+      padding: 20px;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -134,52 +146,52 @@
   </nav>
 </header>
 
-<!-- Notice Bar -->
+<!-- নোটিশ বার -->
 <div class="notice-bar">
   <div class="notice-text">
     📢 স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
   </div>
 </div>
 
-<!-- Hero Slider -->
-<div class="slider" id="home">
+<!-- হিরো সেকশন -->
+<div class="hero" id="home">
+  স্বাধীনতার চেতনায় প্রযুক্তির জয়!
+  <a href="#quiz" class="button">কুইজ শুরু করো</a>
+</div>
+
+<!-- স্কয়ার স্লাইডার -->
+<div class="slider">
   <div class="slides">
-    <div class="slide slide1">স্বাধীনতার চেতনায় প্রযুক্তির জয়!</div>
-    <div class="slide slide2">শুরু হচ্ছে স্বাধীন কুইজ ২০২৫</div>
-    <div class="slide slide3">তুমি কি তৈরি?</div>
+    <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="ছবি ১">
+    <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="ছবি ২">
   </div>
 </div>
 
-<!-- About Section -->
+<!-- আমাদের সম্পর্কে -->
 <section id="about">
   <div class="card">
     <h2>আমাদের সম্পর্কে</h2>
-    <p style="font-size: 1.3rem; margin-top: 15px;">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি জ্ঞান ও চেতনা বৃদ্ধির একটি চমৎকার প্রয়াস। আমাদের লক্ষ্য নতুন প্রজন্মকে তথ্যপ্রযুক্তিতে দক্ষ করে গড়ে তোলা।</p>
+    <p style="font-size: 1.3rem;">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির উদ্যোগ। আমরা চাই শিক্ষার্থীরা তথ্যপ্রযুক্তিতে দক্ষ হয়ে এগিয়ে যাক!</p>
   </div>
 </section>
 
-<!-- Quiz Section -->
+<!-- কুইজ সেকশন -->
 <section id="quiz">
   <div class="card">
     <h2>কুইজে অংশগ্রহণ করো</h2>
-    <p style="font-size: 1.3rem; margin-top: 15px;">তোমার মেধা যাচাই করে জিতে নাও আকর্ষণীয় পুরস্কার ও সম্মাননা।</p>
-    <a href="#" style="margin-top: 20px; display: inline-block; background: #10b981; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none;">কুইজ শুরু করো</a>
+    <p style="font-size: 1.3rem;">তোমার মেধা যাচাই করো এবং পুরস্কার জিতো!</p>
+    <a href="#" class="button">কুইজে অংশগ্রহণ করো</a>
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- যোগাযোগ -->
 <section id="contact">
   <div class="card">
     <h2>যোগাযোগ</h2>
-    <p style="font-size: 1.2rem; margin-top: 15px;">
-      প্রশ্ন বা তথ্যের জন্য যোগাযোগ করো:<br>
-      📞 ০১২৩৪৫৬৭৮৯০<br>
-      ✉️ info@swadhinquiz.com
-    </p>
+    <p style="font-size: 1.2rem;">যোগাযোগের জন্য:<br> 📞 ০১২৩৪৫৬৭৮৯০ <br> ✉️ info@swadhinquiz.com</p>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   © ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
 </footer>
