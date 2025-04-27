@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>আইসিটি স্বাধীন কুইজ</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
@@ -11,7 +11,7 @@
       font-family: 'SolaimanLipi', sans-serif;
       margin: 0;
       padding: 0;
-      background: #ecfdf5;
+      background: #f0fdf4;
       color: #064e3b;
     }
     header {
@@ -22,7 +22,6 @@
       align-items: center;
       color: white;
       position: relative;
-      z-index: 10;
     }
     header h1 {
       margin: 0;
@@ -37,137 +36,87 @@
       text-decoration: none;
       font-size: 1rem;
     }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
     @media (max-width: 768px) {
       nav {
         display: none;
+        flex-direction: column;
+        background: #059669;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
       }
     }
-    /* Thrice Dot Menu */
-    .threedot-menu {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    .threedot-menu div {
-      width: 30px;
-      height: 3px;
-      background-color: #059669;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.4s ease;
-    }
-    .threedot-menu.active div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-      background-color: #10b981;
-    }
-    .threedot-menu.active div:nth-child(2) {
-      opacity: 0;
-    }
-    .threedot-menu.active div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-      background-color: #10b981;
-    }
-    .menu-options {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 70px;
-      right: 20px;
-      background: #059669;
-      border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 999;
-      min-width: 200px;
-      animation: fadeIn 0.3s ease;
-    }
-    .menu-options.active {
-      display: flex;
-    }
-    .menu-options a {
-      color: white;
-      text-decoration: none;
-      padding: 12px;
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      transition: background 0.3s;
-    }
-    .menu-options a:last-child {
-      border-bottom: none;
-    }
-    .menu-options a:hover {
-      background-color: #34d399;
-      border-radius: 8px;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    /* Notice Bar */
-    .notice-bar {
-      background: #f59e0b;
-      color: white;
-      padding: 10px 20px;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      font-size: 1.2rem;
-      font-weight: bold;
-      position: relative;
-    }
-    .notice-text {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 15s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-100%, 0); }
-    }
-
-    /* Hero Section */
     .hero {
-      background: none;
       height: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       color: #059669;
-      font-family: 'SolaimanLipi', sans-serif;
       font-size: 2.5rem;
       font-weight: bold;
-      text-align: center;
-      padding: 0 20px;
       animation: fadeIn 3s ease-out;
+      margin: 20px 0;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
     .button {
-      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
       background-color: #10b981;
       color: white;
-      padding: 15px 30px;
-      text-decoration: none;
+      border: none;
       border-radius: 8px;
+      text-decoration: none;
       font-size: 1.2rem;
-      margin-top: 20px;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
     .button:hover {
       background-color: #34d399;
     }
-
-    /* Slider */
+    .notice {
+      background: #d1fae5;
+      padding: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      font-size: 1.2rem;
+      color: #047857;
+    }
+    .notice p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
     .slider {
-      margin: 40px auto;
+      margin: 30px auto;
       width: 300px;
       height: 300px;
       overflow: hidden;
@@ -176,7 +125,7 @@
     }
     .slides {
       display: flex;
-      width: calc(300px * 2);
+      width: 600px;
       animation: slide 6s infinite;
     }
     .slides img {
@@ -185,36 +134,88 @@
       object-fit: cover;
     }
     @keyframes slide {
-      0% { transform: translateX(0); }
-      20% { transform: translateX(0); }
-      40% { transform: translateX(-300px); }
-      60% { transform: translateX(-300px); }
-      80% { transform: translateX(0); }
-      100% { transform: translateX(0); }
+      0%, 20% { transform: translateX(0); }
+      40%, 60% { transform: translateX(-300px); }
+      80%, 100% { transform: translateX(0); }
     }
-
-    section {
-      padding: 40px 20px;
+    .section-title {
       text-align: center;
-    }
-    section h2 {
+      font-size: 2rem;
       color: #059669;
-      margin-bottom: 20px;
+      margin: 40px 0 20px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card h3 {
+      color: #047857;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #065f46;
     }
     footer {
       background: #065f46;
       padding: 20px;
       color: white;
       text-align: center;
-      margin-top: 40px;
+    }
+    /* Three-dot menu */
+    .threedot-menu {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 100;
+    }
+    .threedot-menu div {
+      background: white;
+      width: 25px;
+      height: 3px;
+      margin: 4px;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .threedot-menu {
+        display: flex;
+      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
 </head>
 
 <body>
 
 <header>
-  <h1>আইসিটি স্বাধীন কুইজ</h1>
+  <h1>ICT স্বাধীন কুইজ</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <nav>
     <a href="#home">হোম</a>
     <a href="#about">আমাদের সম্পর্কে</a>
@@ -223,38 +224,18 @@
   </nav>
 </header>
 
-<!-- থ্রি ডট -->
-<div class="threedot-menu" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
+<!-- Notice Section -->
+<div class="notice">
+  <p>স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।</p>
 </div>
 
-<!-- মেনু অপশন -->
-<div class="menu-options" id="menuOptions">
-  <a href="#home">হোম পেইজ</a>
-  <a href="#about">আমাদের সম্পর্কে</a>
-  <a href="#quiz">স্বাধীন কুইজ</a>
-  <a href="#campus-leaders">ক্যাম্পাস লিডার্স</a>
-  <a href="#girls">প্রিমিয়ার গার্লস</a>
-  <a href="#press-media">প্রেস এবং মিডিয়া</a>
-  <a href="#collaboration">সহযোগিতা</a>
-</div>
-
-<!-- নোটিশ বার -->
-<div class="notice-bar">
-  <div class="notice-text">
-    স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
-  </div>
-</div>
-
-<!-- হিরো সেকশন -->
-<div class="hero" id="home">
+<!-- Hero Section -->
+<section class="hero" id="home">
   স্বাধীনতার চেতনায় প্রযুক্তির জয়!
   <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
-</div>
+</section>
 
-<!-- স্লাইডার -->
+<!-- Slider Section -->
 <div class="slider">
   <div class="slides">
     <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
@@ -262,49 +243,51 @@
   </div>
 </div>
 
-<!-- আমাদের সম্পর্কে -->
+<!-- About Section -->
 <section id="about">
-  <h2>আমাদের সম্পর্কে</h2>
-  <p style="font-size: 1.4rem;">
-    "আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রচেষ্টা। আমরা বিশ্বাস করি স্বাধীনচেতা মেধাই ভবিষ্যৎ গড়বে।
-  </p>
+  <h2 class="section-title">আমাদের সম্পর্কে</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>আমাদের লক্ষ্য</h3>
+      <p>তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধি করা ও আইসিটি দক্ষতা বাড়ানো।</p>
+    </div>
+    <div class="card">
+      <h3>কেন অংশ নেবেন?</h3>
+      <p>প্রতিযোগিতার মাধ্যমে জিতে নিতে পারেন পুরস্কার ও সম্মাননা!</p>
+    </div>
+  </div>
 </section>
 
-<!-- কুইজ -->
+<!-- Quiz Section -->
 <section id="quiz">
-  <h2>কুইজে অংশগ্রহণ করো</h2>
-  <p>দক্ষতা যাচাই করে জিতে নাও সম্মাননা ও পুরস্কার!</p>
+  <h2 class="section-title">কুইজে অংশগ্রহণ করো</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>দক্ষতা যাচাই</h3>
+      <p>নিজেকে যাচাই করো আইসিটি কুইজের মাধ্যমে।</p>
+    </div>
+    <div class="card">
+      <h3>পুরস্কার</h3>
+      <p>শ্রেষ্ঠদের জন্য আকর্ষণীয় পুরস্কার!</p>
+    </div>
+  </div>
   <a href="#" class="button">কুইজ শুরু করো</a>
 </section>
 
-<!-- যোগাযোগ -->
+<!-- Contact Section -->
 <section id="contact">
-  <h2>যোগাযোগ</h2>
-  <p>প্রশ্ন বা তথ্যের জন্য যোগাযোগ করো: <br> 📞 ০১২৩৪৫৬৭৮৯০ <br> ✉️ info@swadhinquiz.com</p>
+  <h2 class="section-title">যোগাযোগ</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>যোগাযোগ করো</h3>
+      <p>📞 ০১২৩৪৫৬৭৮৯০<br>✉️ info@swadhinquiz.com</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © ২০২৫ আইসিটি স্বাধীন কুইজ | সব অধিকার সংরক্ষিত
+  © ২০২৫ ICT স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
 </footer>
-
-<script>
-function toggleMenu() {
-  var menu = document.querySelector('.threedot-menu');
-  var menuOptions = document.getElementById('menuOptions');
-  menu.classList.toggle('active');
-  menuOptions.classList.toggle('active');
-}
-
-// বাইরে ক্লিক করলে মেনু বন্ধ হবে
-window.addEventListener('click', function(e) {
-  var menu = document.querySelector('.threedot-menu');
-  var menuOptions = document.getElementById('menuOptions');
-  if (!menu.contains(e.target) && !menuOptions.contains(e.target)) {
-    menu.classList.remove('active');
-    menuOptions.classList.remove('active');
-  }
-});
-</script>
 
 </body>
 </html>
