@@ -60,29 +60,42 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    .hero {
-      text-align: center;
-      padding: 100px 20px 50px;
-      background: linear-gradient(#ecfdf5, #ffffff);
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+      background: #ecfdf5;
     }
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slideAnimation 12s infinite;
     }
-    .hero a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: #10b981;
-      color: white;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: background 0.3s;
+    .slide {
+      flex: 1 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #065f46;
+      background-size: cover;
+      background-position: center;
+      transition: background 0.5s;
     }
-    .hero a:hover {
-      background: #34d399;
+    .slide1 { background-image: url('https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg'); }
+    .slide2 { background-image: url('https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg'); }
+    .slide3 { background: linear-gradient(#d1fae5, #bbf7d0); }
+
+    @keyframes slideAnimation {
+      0% {transform: translateX(0);}
+      30% {transform: translateX(0);}
+      33% {transform: translateX(-100%);}
+      63% {transform: translateX(-100%);}
+      66% {transform: translateX(-200%);}
+      96% {transform: translateX(-200%);}
+      100% {transform: translateX(0);}
     }
     section {
       padding: 60px 20px;
@@ -107,10 +120,6 @@
       padding: 20px;
       margin-top: 50px;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
   </style>
 </head>
 <body>
@@ -132,10 +141,13 @@
   </div>
 </div>
 
-<!-- Hero Section -->
-<div class="hero" id="home">
-  <h2>স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
-  <a href="#quiz">কুইজে অংশগ্রহণ করো</a>
+<!-- Hero Slider -->
+<div class="slider" id="home">
+  <div class="slides">
+    <div class="slide slide1">স্বাধীনতার চেতনায় প্রযুক্তির জয়!</div>
+    <div class="slide slide2">শুরু হচ্ছে স্বাধীন কুইজ ২০২৫</div>
+    <div class="slide slide3">তুমি কি তৈরি?</div>
+  </div>
 </div>
 
 <!-- About Section -->
