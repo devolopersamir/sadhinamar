@@ -2,236 +2,175 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আইসিটি স্বাধীন কুইজ</title>
-  <meta name="description" content="আইসিটি স্বাধীন কুইজ ২০২৫ - বাংলাদেশের তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি উদ্যোগ।">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>স্বাধীন কুইজ ২০২৫</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'SolaimanLipi', sans-serif;
-      margin: 0;
-      background: #ecfdf5;
+      background: #f0fdfa;
       color: #064e3b;
     }
     header {
-      background: linear-gradient(90deg, #10b981, #059669);
+      background: linear-gradient(90deg, #059669, #10b981);
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     header h1 {
-      margin: 0;
       font-size: 1.8rem;
       color: white;
     }
-    nav {
-      display: flex;
-      gap: 15px;
-    }
     nav a {
       color: white;
+      margin-left: 20px;
       text-decoration: none;
-      font-size: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
       transition: color 0.3s;
     }
     nav a:hover {
       color: #d1fae5;
     }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+    .notice-bar {
+      background: #bbf7d0;
+      color: #065f46;
+      padding: 10px;
+      overflow: hidden;
+      position: relative;
     }
-    .menu-toggle span {
-      background: white;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-      border-radius: 2px;
-      transition: 0.3s;
+    .notice-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: moveLeft 15s linear infinite;
+      font-size: 1.2rem;
     }
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: #059669;
-        border-radius: 8px;
-        padding: 10px;
-        z-index: 99;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
+    @keyframes moveLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
     .hero {
       text-align: center;
       padding: 100px 20px 50px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #059669;
-      animation: fadeIn 2s ease;
+      background: linear-gradient(#ecfdf5, #ffffff);
     }
-    .button {
-      margin-top: 20px;
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero a {
       display: inline-block;
-      padding: 12px 24px;
+      margin-top: 20px;
+      padding: 12px 30px;
       background: #10b981;
       color: white;
       border-radius: 8px;
-      text-decoration: none;
       font-size: 1.2rem;
+      text-decoration: none;
       transition: background 0.3s;
     }
-    .button:hover {
+    .hero a:hover {
       background: #34d399;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .slider {
-      margin: 40px auto;
-      width: 300px;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-    .slides {
-      display: flex;
-      transition: transform 1s ease;
-    }
-    .slides img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-    }
     section {
-      text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    section h2 {
-      color: #059669;
-      margin-bottom: 20px;
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     footer {
       background: #065f46;
-      padding: 20px;
       color: white;
       text-align: center;
-      margin-top: 40px;
+      padding: 20px;
+      margin-top: 50px;
     }
-    /* নোটিশ সিস্টেমের স্টাইল */
-    .notice-container {
-      overflow: hidden;
-      background: #d1fae5;
-      color: #065f46;
-      padding: 10px 0;
-    }
-    .notice {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll-left 15s linear infinite;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>আইসিটি স্বাধীন কুইজ</h1>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav id="nav">
+  <h1>স্বাধীন কুইজ ২০২৫</h1>
+  <nav>
     <a href="#home">হোম</a>
     <a href="#about">আমাদের সম্পর্কে</a>
     <a href="#quiz">কুইজ</a>
     <a href="#contact">যোগাযোগ</a>
-    <a href="#campus-leaders">ক্যাম্পাস লিডার্স</a>
-    <a href="#girls">প্রিমিয়ার গার্লস</a>
-    <a href="#press-media">প্রেস ও মিডিয়া</a>
-    <a href="#collaboration">সহযোগিতা</a>
   </nav>
 </header>
 
-<div class="hero" id="home">
-  স্বাধীনতার চেতনায় প্রযুক্তির জয়!
-  <br>
-  <a href="#quiz" class="button">স্বাধীন কুইজ ২০২৫</a>
-</div>
-
-<div class="slider">
-  <div class="slides" id="slides">
-    <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
-    <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="Image 2">
-    <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="Image 1">
+<!-- Notice Bar -->
+<div class="notice-bar">
+  <div class="notice-text">
+    📢 স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
   </div>
 </div>
 
-<section id="about">
-  <h2>আমাদের সম্পর্কে</h2>
-  <p style="font-size: 1.3rem;">"আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রয়াস। শিক্ষার্থীদের দক্ষতা বাড়ানো ও স্বাধীনচেতা ভবিষ্যৎ গড়াই আমাদের লক্ষ্য।</p>
-</section>
-
-<!-- নোটিশ সিস্টেম -->
-<div class="notice-container">
-  <p class="notice">
-    স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
-  </p>
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <h2>স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
+  <a href="#quiz">কুইজে অংশগ্রহণ করো</a>
 </div>
 
+<!-- About Section -->
+<section id="about">
+  <div class="card">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p style="font-size: 1.3rem; margin-top: 15px;">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি জ্ঞান ও চেতনা বৃদ্ধির একটি চমৎকার প্রয়াস। আমাদের লক্ষ্য নতুন প্রজন্মকে তথ্যপ্রযুক্তিতে দক্ষ করে গড়ে তোলা।</p>
+  </div>
+</section>
+
+<!-- Quiz Section -->
 <section id="quiz">
-  <h2>কুইজে অংশগ্রহণ করো</h2>
-  <p>দক্ষতা যাচাই করে জিতে নাও সম্মাননা ও পুরস্কার!</p>
-  <a href="#" class="button">কুইজ শুরু করো</a>
+  <div class="card">
+    <h2>কুইজে অংশগ্রহণ করো</h2>
+    <p style="font-size: 1.3rem; margin-top: 15px;">তোমার মেধা যাচাই করে জিতে নাও আকর্ষণীয় পুরস্কার ও সম্মাননা।</p>
+    <a href="#" style="margin-top: 20px; display: inline-block; background: #10b981; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none;">কুইজ শুরু করো</a>
+  </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact">
-  <h2>যোগাযোগ</h2>
-  <p>প্রশ্নের জন্য যোগাযোগ করো:<br> 📞 ০১২৩৪৫৬৭৮৯০ <br> ✉️ info@swadhinquiz.com</p>
+  <div class="card">
+    <h2>যোগাযোগ</h2>
+    <p style="font-size: 1.2rem; margin-top: 15px;">
+      প্রশ্ন বা তথ্যের জন্য যোগাযোগ করো:<br>
+      📞 ০১২৩৪৫৬৭৮৯০<br>
+      ✉️ info@swadhinquiz.com
+    </p>
+  </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  © ২০২৫ আইসিটি স্বাধীন কুইজ | সব অধিকার সংরক্ষিত
+  © ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
 </footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById('nav').classList.toggle('active');
-}
-
-// Simple auto slider
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.getElementById('slides');
-  slideIndex++;
-  if (slideIndex >= 2) { // দুইটি ইমেজ আছে
-    slideIndex = 0;
-  }
-  slides.style.transform = 'translateX(' + (-300 * slideIndex) + 'px)';
-}
-setInterval(showSlides, 3000); // প্রতি ৩ সেকেন্ডে পরিবর্তন
-</script>
 
 </body>
 </html>
