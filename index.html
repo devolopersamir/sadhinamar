@@ -129,6 +129,28 @@
       text-align: center;
       margin-top: 40px;
     }
+    /* নোটিশ সিস্টেমের স্টাইল */
+    .notice-container {
+      overflow: hidden;
+      background: #d1fae5;
+      color: #065f46;
+      padding: 10px 0;
+    }
+    .notice {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 15s linear infinite;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
 </head>
 <body>
@@ -170,6 +192,13 @@
   <h2>আমাদের সম্পর্কে</h2>
   <p style="font-size: 1.3rem;">"আইসিটি স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি প্রয়াস। শিক্ষার্থীদের দক্ষতা বাড়ানো ও স্বাধীনচেতা ভবিষ্যৎ গড়াই আমাদের লক্ষ্য।</p>
 </section>
+
+<!-- নোটিশ সিস্টেম -->
+<div class="notice-container">
+  <p class="notice">
+    স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
+  </p>
+</div>
 
 <section id="quiz">
   <h2>কুইজে অংশগ্রহণ করো</h2>
