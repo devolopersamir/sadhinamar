@@ -6,28 +6,29 @@
   <title>স্বাধীন কুইজ ২০২৫</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"> <!-- SolaimanLipi Font -->
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
   <style>
     /* Global Styles */
     body {
       font-family: 'SolaimanLipi', sans-serif;
-      background: #f9fafb;
+      background: #f3f4f6;
       color: #1f2937;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
     /* Header */
     header {
       background: linear-gradient(135deg, #10b981, #059669);
       color: white;
-      padding: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       letter-spacing: 1px;
     }
@@ -48,29 +49,31 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(5, 150, 105, 0.8)), url('https://via.placeholder.com/1200x600') center/cover;
-      height: 500px;
+      height: 600px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       font-weight: 700;
       padding: 0 20px;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       transition: all 0.5s ease;
+      background-attachment: fixed;
     }
 
     .hero h2 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero p {
       font-size: 1.25rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       animation: fadeIn 2s ease-in-out;
     }
 
@@ -83,10 +86,12 @@
       border-radius: 50px;
       transition: background-color 0.3s ease;
       animation: fadeIn 2.5s ease-in-out;
+      border: 2px solid transparent;
     }
 
     .hero .button:hover {
       background-color: #10b981;
+      border-color: #10b981;
     }
 
     /* Slider Section */
@@ -112,7 +117,7 @@
       border-radius: 12px;
     }
 
-    /* Animation for Slider */
+    /* Slider Animation */
     @keyframes fadeSlider {
       0% { transform: translateX(0); }
       33% { transform: translateX(-100%); }
@@ -142,7 +147,7 @@
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
 
       header nav a {
@@ -152,7 +157,7 @@
       .hero {
         font-size: 1.75rem;
         padding: 20px;
-        height: 400px;
+        height: 450px;
       }
 
       .hero .button {
@@ -169,6 +174,20 @@
     /* Smooth Scroll */
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #10b981;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #059669;
     }
   </style>
 </head>
