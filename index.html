@@ -6,11 +6,42 @@
   <title>স্বাধীন কুইজ ২০২৫</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"> <!-- SolaimanLipi Font -->
   <style>
     body {
       font-family: 'SolaimanLipi', sans-serif;
       background: #f9fafb;
       color: #1f2937;
+    }
+
+    /* Slider Styles */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Animation for Slider */
+    @keyframes fadeSlider {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
     }
   </style>
 </head>
@@ -34,6 +65,15 @@
     <h2 class="text-4xl font-extrabold mb-4">স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
     <p class="text-xl mb-6">আইসিটি কুইজে অংশগ্রহণ করে তোমার জ্ঞান যাচাই করো</p>
     <a href="#quiz" class="bg-teal-600 hover:bg-teal-700 text-white py-2 px-6 rounded-full font-semibold text-lg">কুইজ শুরু করো</a>
+  </section>
+
+  <!-- Slider Section -->
+  <section class="slider">
+    <div class="slides">
+      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="ছবি ১">
+      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="ছবি ২">
+      <img src="https://via.placeholder.com/600x400" alt="ছবি ৩">
+    </div>
   </section>
 
   <!-- Notice Section -->
@@ -75,5 +115,19 @@
     <p class="text-lg">© ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত</p>
   </footer>
 
+  <!-- Slider Script for Animation -->
+  <script>
+    const slider = document.querySelector('.slides');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      currentSlide++;
+      if (currentSlide === 3) {
+        currentSlide = 0;
+      }
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }, 3000); // Change slide every 3 seconds
+  </script>
+  
 </body>
 </html>
