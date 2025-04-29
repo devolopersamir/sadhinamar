@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"> <!-- SolaimanLipi Font -->
   <style>
+    /* Global Styles */
     body {
       font-family: 'SolaimanLipi', sans-serif;
       background: #f9fafb;
@@ -53,6 +54,7 @@
       color: white;
       padding: 1.5rem 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
 
     header h1 {
@@ -88,15 +90,18 @@
       padding: 0 20px;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
     }
 
     .hero h2 {
       margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero .button {
@@ -107,6 +112,7 @@
       font-weight: 600;
       border-radius: 50px;
       transition: background-color 0.3s ease;
+      animation: fadeIn 2.5s ease-in-out;
     }
 
     .hero .button:hover {
@@ -119,10 +125,44 @@
       color: white;
       padding: 2rem 0;
       text-align: center;
+      transition: all 0.3s ease;
     }
 
     footer p {
       font-size: 1.125rem;
+    }
+
+    /* FadeIn animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header nav a {
+        font-size: 1rem;
+      }
+
+      .hero {
+        font-size: 1.75rem;
+        padding: 20px;
+        height: 400px;
+      }
+
+      .hero .button {
+        font-size: 1rem;
+        padding: 12px 30px;
+      }
+
+      .slider {
+        max-width: 100%;
+        margin: 20px auto;
+      }
     }
   </style>
 </head>
