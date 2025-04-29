@@ -1,278 +1,97 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>স্বাধীন কুইজ ২০২৫</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
   <style>
-    /* Global Styles */
     body {
       font-family: 'SolaimanLipi', sans-serif;
-      background: #f3f4f6;
-      color: #1f2937;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
     }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: white;
-      padding: 2rem 0;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    header nav a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.125rem;
-      margin: 0 20px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    header nav a:hover {
-      color: #bbf7d0;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(5, 150, 105, 0.8)), url('https://via.placeholder.com/1200x600') center/cover;
-      height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      font-size: 2.5rem;
-      font-weight: 700;
-      padding: 0 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: all 0.5s ease;
-      background-attachment: fixed;
-    }
-
-    .hero h2 {
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero .button {
-      background-color: #059669;
-      color: white;
-      padding: 15px 35px;
-      font-size: 1.125rem;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: background-color 0.3s ease;
-      animation: fadeIn 2.5s ease-in-out;
-      border: 2px solid transparent;
-    }
-
-    .hero .button:hover {
-      background-color: #10b981;
-      border-color: #10b981;
-    }
-
-    /* Slider Section */
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 40px auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .slides img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* Slider Animation */
-    @keyframes fadeSlider {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
-    }
-
-    /* Footer */
-    footer {
-      background-color: #065f46;
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    footer p {
-      font-size: 1.125rem;
-    }
-
-    /* FadeIn animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header nav a {
-        font-size: 1rem;
-      }
-
-      .hero {
-        font-size: 1.75rem;
-        padding: 20px;
-        height: 450px;
-      }
-
-      .hero .button {
-        font-size: 1rem;
-        padding: 12px 30px;
-      }
-
-      .slider {
-        max-width: 100%;
-        margin: 20px auto;
-      }
-    }
-
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #10b981;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #059669;
+    .slide-animation {
+      transition: transform 0.5s ease-in-out;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <header>
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-3xl font-bold">স্বাধীন কুইজ ২০২৫</h1>
-      <nav>
-        <a href="#home">হোম</a>
-        <a href="#about">আমাদের সম্পর্কে</a>
-        <a href="#quiz">কুইজ</a>
-        <a href="#contact">যোগাযোগ</a>
+  <header class="bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4">
+      <h1 class="text-2xl md:text-3xl font-bold">স্বাধীন কুইজ ২০২৫</h1>
+      <nav class="mt-2 md:mt-0 space-x-4 text-base font-medium">
+        <a href="#home" class="hover:underline">হোম</a>
+        <a href="#about" class="hover:underline">আমাদের সম্পর্কে</a>
+        <a href="#quiz" class="hover:underline">কুইজ</a>
+        <a href="#contact" class="hover:underline">যোগাযোগ</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h2>স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
-    <p>আইসিটি কুইজে অংশগ্রহণ করে তোমার জ্ঞান যাচাই করো</p>
-    <a href="#quiz" class="button">কুইজ শুরু করো</a>
+  <section id="home" class="text-center py-20 bg-gradient-to-r from-emerald-100 to-teal-50">
+    <div class="px-4">
+      <h2 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4 animate-fadeIn">স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
+      <p class="text-lg md:text-xl text-gray-700 mb-6 animate-fadeIn">আইসিটি কুইজে অংশগ্রহণ করে তোমার জ্ঞান যাচাই করো</p>
+      <a href="#quiz" class="bg-teal-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-teal-700 transition">কুইজ শুরু করো</a>
+    </div>
   </section>
 
   <!-- Slider Section -->
-  <section class="slider">
-    <div class="slides">
-      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="ছবি ১">
-      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="ছবি ২">
-      <img src="https://via.placeholder.com/800x400" alt="ছবি ৩">
+  <section class="w-full max-w-4xl mx-auto mt-10 overflow-hidden rounded-lg shadow-md">
+    <div id="slider" class="flex w-[300%] slide-animation">
+      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" alt="ছবি ১" class="w-full sm:w-1/3 object-cover">
+      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" alt="ছবি ২" class="w-full sm:w-1/3 object-cover">
+      <img src="https://via.placeholder.com/800x400" alt="ছবি ৩" class="w-full sm:w-1/3 object-cover">
     </div>
   </section>
 
-  <!-- Notice Section -->
-  <section class="bg-teal-50 py-8">
-    <div class="container mx-auto text-center">
-      <p class="text-teal-800 text-lg font-semibold">📢 স্বাধীন কুইজ প্রতিযোগিতা সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।</p>
-    </div>
-  </section>
+  <!-- Notice Bar -->
+  <div class="bg-emerald-100 py-3 mt-10">
+    <p class="text-center text-teal-800 font-semibold">📢 স্বাধীন কুইজ প্রতিযোগিতায় আপনাকে স্বাগতম! শীঘ্রই কার্যক্রম শুরু হবে।</p>
+  </div>
 
   <!-- About Section -->
-  <section id="about" class="py-12 bg-white">
-    <div class="container mx-auto text-center px-6">
-      <h2 class="text-3xl font-semibold text-teal-600 mb-4">আমাদের সম্পর্কে</h2>
-      <p class="text-lg text-gray-700">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির উদ্যোগ। আমরা চাই শিক্ষার্থীরা তথ্যপ্রযুক্তিতে দক্ষ হয়ে এগিয়ে যাক!</p>
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">আমাদের সম্পর্কে</h2>
+      <p class="text-lg text-gray-700">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি নতুন প্ল্যাটফর্ম।</p>
     </div>
   </section>
 
   <!-- Quiz Section -->
-  <section id="quiz" class="py-12 bg-teal-50">
-    <div class="container mx-auto text-center px-6">
-      <h2 class="text-3xl font-semibold text-teal-600 mb-4">কুইজে অংশগ্রহণ করো</h2>
+  <section id="quiz" class="py-16 bg-teal-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">কুইজে অংশগ্রহণ করো</h2>
       <p class="text-lg text-gray-700 mb-6">তোমার মেধা যাচাই করো এবং পুরস্কার জিতো!</p>
-      <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white py-2 px-6 rounded-full font-semibold text-lg">কুইজে অংশগ্রহণ করো</a>
+      <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-full font-semibold">কুইজে অংশগ্রহণ করো</a>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-12 bg-white">
-    <div class="container mx-auto text-center px-6">
-      <h2 class="text-3xl font-semibold text-teal-600 mb-4">যোগাযোগ</h2>
-      <p class="text-lg text-gray-700 mb-4">যোগাযোগের জন্য:</p>
-      <p class="text-lg text-teal-600">📞 ০১২৩৪৫৬৭৮৯০</p>
-      <p class="text-lg text-teal-600">✉️ info@swadhinquiz.com</p>
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">যোগাযোগ</h2>
+      <p class="text-lg text-gray-700">যোগাযোগ করুন:<br> 📞 ০১২৩৪৫৬৭৮৯০<br> ✉️ info@swadhinquiz.com</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p class="text-lg">© ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত</p>
+  <footer class="bg-emerald-600 text-white py-6 text-center">
+    © ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
   </footer>
 
-  <!-- Slider Script for Animation -->
+  <!-- Slider Script -->
   <script>
-    const slider = document.querySelector('.slides');
-    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    let index = 0;
 
     setInterval(() => {
-      currentSlide++;
-      if (currentSlide === 3) {
-        currentSlide = 0;
-      }
-      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }, 3000); // Change slide every 3 seconds
+      index = (index + 1) % 3;
+      slider.style.transform = `translateX(-${index * 100 / 3}%)`;
+    }, 3000);
   </script>
 
 </body>
