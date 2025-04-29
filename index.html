@@ -1,113 +1,71 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>স্বাধীন কুইজ ২০২৫</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: 'SolaimanLipi', sans-serif;
     }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(0); }
+      40% { transform: translateX(-100%); }
+      60% { transform: translateX(-100%); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-<!-- Popup Modal -->
-<div id="popup-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg p-6 max-w-sm text-center shadow-lg animate-bounce">
-    <h2 class="text-lg font-semibold text-red-600 mb-2">নোটিশ</h2>
-    <p class="text-gray-700 mb-4">এই ওয়েবসাইটে বর্তমানে কাজ চলছে।</p>
-    <button onclick="closePopup()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">ঠিক আছে</button>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4">
-    <h1 class="text-2xl md:text-3xl font-bold">স্বাধীন কুইজ ২০২৫</h1>
-    <nav class="mt-2 md:mt-0 space-x-4 text-base font-medium">
+<body class="bg-emerald-50 text-emerald-900">  <!-- Popup Notice -->  <div id="popup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 text-center shadow-lg">
+      <h2 class="text-xl font-bold mb-4">এই ওয়েবসাইটে বর্তমানে কাজ চলছে।</h2>
+      <button onclick="document.getElementById('popup').style.display='none'" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700 transition">ঠিক আছে</button>
+    </div>
+  </div>  <!-- Header -->  <header class="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white py-4 px-6 flex justify-between items-center">
+    <h1 class="text-xl md:text-2xl font-bold">স্বাধীন কুইজ ২০২৫</h1>
+    <nav class="space-x-4 hidden md:flex">
       <a href="#home" class="hover:underline">হোম</a>
       <a href="#about" class="hover:underline">আমাদের সম্পর্কে</a>
       <a href="#quiz" class="hover:underline">কুইজ</a>
       <a href="#contact" class="hover:underline">যোগাযোগ</a>
     </nav>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section id="home" class="text-center py-20 bg-gradient-to-r from-emerald-100 to-teal-50">
-  <div class="px-4">
-    <h2 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">স্বাধীনতার চেতনায় প্রযুক্তির জয়!</h2>
-    <a href="#quiz" class="bg-teal-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-teal-700 transition">কুইজ শুরু করো</a>
-  </div>
-</section>
-
-<!-- Slider -->
-<section class="max-w-4xl mx-auto my-10 px-4">
-  <div class="relative overflow-hidden rounded-lg shadow-lg">
-    <div id="slider" class="flex transition-transform duration-700">
-      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" class="w-full object-cover" />
-      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" class="w-full object-cover" />
-      <img src="https://via.placeholder.com/800x400" class="w-full object-cover" />
+  </header>  <!-- Notice Bar -->  <div class="bg-emerald-200 overflow-hidden">
+    <p class="whitespace-nowrap animate-marquee text-center py-2 text-emerald-800 font-semibold">
+      📢 স্বাধীন কুইজ প্রতিযোগিতা এর সকলকে জানাই শুভেচ্ছা ও অভিনন্দন। শীঘ্রই আমাদের কার্যক্রম শুরু করা হবে।
+    </p>
+  </div>  <!-- Hero Section -->  <section id="home" class="text-center py-20 bg-gradient-to-r from-emerald-100 to-teal-50">
+    <div class="px-4">
+      <h2 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4 leading-snug">
+        <span class="block">স্বাধীনতার চেতনায়</span>
+        <span class="block">প্রযুক্তির জয়!</span>
+      </h2>
+      <a href="#quiz" class="bg-teal-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-teal-700 transition">কুইজ শুরু করো</a>
     </div>
-  </div>
-</section>
-
-<!-- Notice Bar -->
-<div class="bg-emerald-100 py-3">
-  <p class="text-center text-teal-800 font-semibold">📢 স্বাধীন কুইজ প্রতিযোগিতায় আপনাকে স্বাগতম! শীঘ্রই কার্যক্রম শুরু হবে।</p>
-</div>
-
-<!-- About Section -->
-<section id="about" class="py-16 bg-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">আমাদের সম্পর্কে</h2>
-    <p class="text-lg text-gray-700">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির একটি নতুন প্ল্যাটফর্ম।</p>
-  </div>
-</section>
-
-<!-- Quiz Section -->
-<section id="quiz" class="py-16 bg-teal-50">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">কুইজে অংশগ্রহণ করো</h2>
-    <p class="text-lg text-gray-700 mb-6">তোমার মেধা যাচাই করো এবং পুরস্কার জিতো!</p>
-    <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-full font-semibold">কুইজে অংশগ্রহণ করো</a>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-2xl md:text-3xl font-semibold text-teal-600 mb-4">যোগাযোগ</h2>
-    <p class="text-lg text-gray-700">যোগাযোগ করুন:<br> 📞 ০১২৩৪৫৬৭৮৯০<br> ✉️ info@swadhinquiz.com</p>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-emerald-600 text-white py-6 text-center">
-  © ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
-</footer>
-
-<!-- Scripts -->
-<script>
-  // Slider
-  const slider = document.getElementById('slider');
-  let current = 0;
-  setInterval(() => {
-    current = (current + 1) % 3;
-    slider.style.transform = `translateX(-${current * 100}%)`;
-  }, 3000);
-
-  // Popup
-  window.onload = () => {
-    document.getElementById('popup-modal').classList.remove('hidden');
-  };
-  function closePopup() {
-    document.getElementById('popup-modal').classList.add('hidden');
-  }
-</script>
-
-</body>
+  </section>  <!-- Image Slider -->  <div class="overflow-hidden w-full max-w-lg mx-auto rounded-xl shadow-xl">
+    <div class="flex w-[200%] animate-[slide_10s_linear_infinite]">
+      <img src="https://i.postimg.cc/XqTD8TMq/20250422-063911.jpg" class="w-1/2 object-cover" />
+      <img src="https://i.postimg.cc/mrLRCFNq/20250421-153455.jpg" class="w-1/2 object-cover" />
+    </div>
+  </div>  <!-- About Section -->  <section id="about" class="py-16 px-4">
+    <div class="bg-white rounded-lg shadow p-6 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-teal-700 mb-4">আমাদের সম্পর্কে</h2>
+      <p class="text-lg">"স্বাধীন কুইজ" তরুণদের প্রযুক্তি সচেতনতা বৃদ্ধির উদ্যোগ। আমরা চাই শিক্ষার্থীরা তথ্যপ্রযুক্তিতে দক্ষ হয়ে এগিয়ে যাক!</p>
+    </div>
+  </section>  <!-- Quiz Section -->  <section id="quiz" class="py-16 px-4 bg-emerald-100">
+    <div class="bg-white rounded-lg shadow p-6 max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-teal-700 mb-4">কুইজে অংশগ্রহণ করো</h2>
+      <p class="text-lg mb-6">তোমার মেধা যাচাই করো এবং পুরস্কার জিতো!</p>
+      <a href="#" class="bg-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-700 transition">কুইজে অংশগ্রহণ করো</a>
+    </div>
+  </section>  <!-- Contact Section -->  <section id="contact" class="py-16 px-4">
+    <div class="bg-white rounded-lg shadow p-6 max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-teal-700 mb-4">যোগাযোগ</h2>
+      <p class="text-lg">যোগাযোগের জন্য:<br> 📞 ০১২৩৪৫৬৭৮৯০ <br> ✉️ info@swadhinquiz.com</p>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-emerald-700 text-white text-center py-6">
+    © ২০২৫ স্বাধীন কুইজ | সর্বস্বত্ব সংরক্ষিত
+  </footer></body>
 </html>
