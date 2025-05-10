@@ -13,52 +13,117 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background: #f4f4f4;
+      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
       color: #333;
     }
     header {
       background: linear-gradient(to right, #1e90ff, #00b894);
       color: white;
-      padding: 20px 0;
+      padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     nav {
       background: #fff;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     nav a {
       text-decoration: none;
       color: #1e90ff;
       font-weight: 600;
+      transition: 0.3s;
     }
-    .hero {
-      padding: 50px 20px;
+    nav a:hover {
+      color: #00b894;
+    }
+    section {
+      padding: 60px 20px;
       text-align: center;
-      background: #e0f7fa;
     }
-    .hero h2 {
-      font-size: 2rem;
+    section h2 {
+      font-size: 2.5rem;
       margin-bottom: 20px;
+      color: #1e90ff;
     }
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto;
+    section p {
+      max-width: 800px;
+      margin: 0 auto 30px;
       font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .projects .card-container,
+    .team .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .card h3 {
+      color: #00b894;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px;
+      border: none;
+      background: #00b894;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1e90ff;
     }
     footer {
-      background: #333;
+      background: #1e1e1e;
       color: #fff;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 50px;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+    footer p {
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -71,17 +136,47 @@
     <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#team">Team</a>
     <a href="#contact">Contact</a>
-  </nav>
-  <section class="hero">
+  </nav>  <section class="hero">
     <h2>Welcome to BYIF</h2>
-    <p>
-      Bangladesh Youth ICT Forum (BYIF) is a youth-driven platform dedicated to fostering innovation,
-      digital skills, and ICT education across Bangladesh. We connect and empower the next generation
-      of tech leaders to build a smarter, digital future.
-    </p>
-  </section>
-  <footer>
+    <p>Bangladesh Youth ICT Forum (BYIF) is a youth-driven platform dedicated to fostering innovation, digital skills, and ICT education across Bangladesh. We connect and empower the next generation of tech leaders to build a smarter, digital future.</p>
+  </section>  <section id="about">
+    <h2>About Us</h2>
+    <p>We aim to educate, inspire, and connect the youth of Bangladesh with the power of Information & Communication Technology. Through workshops, seminars, and real-world projects, we nurture future tech leaders.</p>
+  </section>  <section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Youth Coding Camp</h3>
+        <p>A hands-on coding camp for students across Bangladesh to learn HTML, CSS, JavaScript, and Python.</p>
+      </div>
+      <div class="card">
+        <h3>ICT Olympiad</h3>
+        <p>Annual competition to inspire young minds in ICT through quizzes, apps, and innovation challenges.</p>
+      </div>
+    </div>
+  </section>  <section id="team" class="team">
+    <h2>Meet the Team</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Samir Ahmed</h3>
+        <p>Founder & Developer. Class 9 Student passionate about coding, education, and technology.</p>
+      </div>
+      <div class="card">
+        <h3>Fatema Akter</h3>
+        <p>Event Coordinator. Manages events, partnerships, and training sessions across districts.</p>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>  <footer>
     <p>&copy; 2025 Bangladesh Youth ICT Forum. All rights reserved.</p>
   </footer>
 </body>
