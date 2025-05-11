@@ -4,114 +4,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bangladesh Youth ICT Forum</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rubik', sans-serif;
     }
     body {
-      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
+      background: #f5f7fa;
       color: #333;
     }
     header {
-      background: linear-gradient(to right, #1e90ff, #00b894);
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 800;
       margin-bottom: 10px;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      font-weight: 400;
     }
     nav {
-      background: #fff;
+      background: white;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 15px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 999;
     }
     nav a {
       text-decoration: none;
-      color: #1e90ff;
+      color: #2c5364;
       font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
       transition: 0.3s;
     }
     nav a:hover {
-      color: #00b894;
+      background: #2c5364;
+      color: white;
     }
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #1e90ff;
+      font-size: 2.5rem;
+      color: #203a43;
+      margin-bottom: 30px;
     }
     section p {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto 30px;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.7;
       color: #555;
     }
-    .projects .card-container,
-    .team .card-container {
+    .carousel {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       gap: 20px;
+      padding: 20px;
+    }
+    .carousel img {
+      height: 260px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .carousel img:hover {
+      transform: scale(1.03);
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
     .card {
-      background: #fff;
-      padding: 20px;
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      width: 300px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      transition: transform 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
     }
     .card img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 15px;
     }
     .card h3 {
-      color: #00b894;
+      color: #2c5364;
       margin-bottom: 10px;
     }
     .card p {
       color: #666;
       font-size: 0.95rem;
-    }
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      gap: 20px;
-      padding: 20px;
-    }
-    .carousel img {
-      height: 250px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     form {
       max-width: 500px;
@@ -121,15 +126,15 @@
       gap: 15px;
     }
     input, textarea {
-      padding: 12px;
+      padding: 14px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
     }
     button {
-      padding: 12px;
+      padding: 14px;
       border: none;
-      background: #00b894;
+      background: #2c5364;
       color: #fff;
       font-weight: 600;
       border-radius: 8px;
@@ -137,20 +142,17 @@
       transition: 0.3s;
     }
     button:hover {
-      background: #1e90ff;
+      background: #1e3c52;
     }
     footer {
-      background: #1e1e1e;
+      background: #2c5364;
       color: #fff;
       text-align: center;
       padding: 20px 0;
-      margin-top: 60px;
     }
     @media(max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      nav { flex-direction: column; }
-      .card { width: 100%; }
-      .carousel img { height: 200px; }
+      header h1 { font-size: 2.2rem; }
+      section h2 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -165,50 +167,55 @@
     <a href="#projects">Projects</a>
     <a href="#team">Team</a>
     <a href="#contact">Contact</a>
-  </nav>  <section class="hero">
+  </nav>  <section>
     <h2>Welcome to BYIF</h2>
     <p>We connect and empower the next generation of tech leaders in Bangladesh to build a smarter, digital future.</p>
     <div class="carousel">
-      <img src="https://source.unsplash.com/400x250/?technology,youth" alt="Slide 1">
-      <img src="https://source.unsplash.com/401x250/?coding,classroom" alt="Slide 2">
-      <img src="https://source.unsplash.com/402x250/?teamwork,tech" alt="Slide 3">
+      <img src="https://source.unsplash.com/400x260/?youth,technology" alt="Slide 1">
+      <img src="https://source.unsplash.com/401x260/?coding,classroom" alt="Slide 2">
+      <img src="https://source.unsplash.com/402x260/?developer,team" alt="Slide 3">
     </div>
   </section>  <section id="about">
     <h2>About Us</h2>
-    <p>We aim to educate, inspire, and connect the youth of Bangladesh with the power of Information & Communication Technology. Through workshops, seminars, and real-world projects, we nurture future tech leaders.</p>
-  </section>  <section id="projects" class="projects">
+    <p>We aim to educate, inspire, and connect the youth of Bangladesh with the power of ICT. Through workshops, seminars, and real-world projects, we nurture tech-savvy leaders for the digital era.</p>
+  </section>  <section id="projects">
     <h2>Our Projects</h2>
     <div class="card-container">
       <div class="card">
-        <img src="https://source.unsplash.com/300x200/?coding,camp" alt="Coding Camp">
+        <img src="https://source.unsplash.com/300x200/?coding,camp" alt="Project 1">
         <h3>Youth Coding Camp</h3>
-        <p>Students from across the country learn HTML, CSS, JavaScript, and Python in real-time coding workshops.</p>
+        <p>Hands-on training on web and app development for school & college students.</p>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/300x200/?competition,tech" alt="ICT Olympiad">
+        <img src="https://source.unsplash.com/300x200/?tech,quiz" alt="Project 2">
         <h3>ICT Olympiad</h3>
-        <p>Our annual competition inspires youth through coding challenges, quizzes, and innovation contests.</p>
+        <p>National ICT quiz & competition to boost young minds toward innovation.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?robotics,tech" alt="Project 3">
+        <h3>Robotics Workshop</h3>
+        <p>We arrange robotics introduction events to spark curiosity and creativity.</p>
       </div>
     </div>
-  </section>  <section id="team" class="team">
+  </section>  <section id="team">
     <h2>Meet the Team</h2>
     <div class="card-container">
       <div class="card">
         <img src="https://source.unsplash.com/300x200/?person,leader" alt="Samir">
         <h3>Samir Ahmed</h3>
-        <p>Founder & Developer. Class 9 Student passionate about coding, education, and technology.</p>
+        <p>Founder & Developer. Class 9 Student passionate about coding, education, and digital innovation.</p>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/300x200/?person,woman" alt="Fatema">
+        <img src="https://source.unsplash.com/300x200/?woman,teacher" alt="Fatema">
         <h3>Fatema Akter</h3>
-        <p>Event Coordinator. Manages events, partnerships, and training sessions across districts.</p>
+        <p>Event Coordinator. Leads training & bootcamp operations in rural areas.</p>
       </div>
     </div>
   </section>  <section id="contact">
     <h2>Contact Us</h2>
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
       <textarea rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
