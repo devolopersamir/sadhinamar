@@ -1,226 +1,52 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bangladesh Youth ICT Forum</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বাংলাদেশ ইয়ুথ আইসিটি ফোরাম</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Rubik', sans-serif;
-    }
-    body {
-      background: #f5f7fa;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-    nav {
-      background: white;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav a {
-      text-decoration: none;
-      color: #2c5364;
-      font-weight: 600;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #2c5364;
-      color: white;
-    }
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      color: #203a43;
-      margin-bottom: 30px;
-    }
-    section p {
-      max-width: 850px;
-      margin: 0 auto 30px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #555;
-    }
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 20px;
-    }
-    .carousel img {
-      height: 260px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .carousel img:hover {
-      transform: scale(1.03);
-    }
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      padding: 20px;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .card h3 {
-      color: #2c5364;
-      margin-bottom: 10px;
-    }
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea {
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    button {
-      padding: 14px;
-      border: none;
-      background: #2c5364;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #1e3c52;
-    }
-    footer {
-      background: #2c5364;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-    @media(max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      section h2 { font-size: 2rem; }
-    }
+    body { font-family: 'SolaimanLipi', sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #004080; color: white; padding: 20px 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; padding: 0; margin: 0; }
+    nav ul li { display: inline; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+    section { padding: 50px 20px; max-width: 1000px; margin: auto; background: white; margin-top: 20px; border-radius: 8px; }
+    h2 { color: #004080; }
+    footer { text-align: center; background: #004080; color: white; padding: 20px; margin-top: 40px; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Bangladesh Youth ICT Forum</h1>
-    <p>Empowering Youth Through Technology</p>
-  </header>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-  </nav>  <section>
-    <h2>Welcome to BYIF</h2>
-    <p>We connect and empower the next generation of tech leaders in Bangladesh to build a smarter, digital future.</p>
-    <div class="carousel">
-      <img src="https://source.unsplash.com/400x260/?youth,technology" alt="Slide 1">
-      <img src="https://source.unsplash.com/401x260/?coding,classroom" alt="Slide 2">
-      <img src="https://source.unsplash.com/402x260/?developer,team" alt="Slide 3">
-    </div>
-  </section>  <section id="about">
-    <h2>About Us</h2>
-    <p>We aim to educate, inspire, and connect the youth of Bangladesh with the power of ICT. Through workshops, seminars, and real-world projects, we nurture tech-savvy leaders for the digital era.</p>
-  </section>  <section id="projects">
-    <h2>Our Projects</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?coding,camp" alt="Project 1">
-        <h3>Youth Coding Camp</h3>
-        <p>Hands-on training on web and app development for school & college students.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?tech,quiz" alt="Project 2">
-        <h3>ICT Olympiad</h3>
-        <p>National ICT quiz & competition to boost young minds toward innovation.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?robotics,tech" alt="Project 3">
-        <h3>Robotics Workshop</h3>
-        <p>We arrange robotics introduction events to spark curiosity and creativity.</p>
-      </div>
-    </div>
+<body>  <header>
+    <h1>বাংলাদেশ ইয়ুথ আইসিটি ফোরাম (BYIF)</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">আমাদের সম্পর্কে</a></li>
+        <li><a href="#sonarBangla">সোনার বাংলা</a></li>
+        <li><a href="#join">আমাদের সাথে যুক্ত হোন</a></li>
+        <li><a href="#team">আমাদের টিম</a></li>
+        <li><a href="#community">কমিউনিটি</a></li>
+        <li><a href="#contact">যোগাযোগ</a></li>
+      </ul>
+    </nav>
+  </header>  <section id="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>বাংলাদেশ ইয়ুথ আইসিটি ফোরাম (BYIF) একটি জাতীয় পর্যায়ের তরুণদের প্রযুক্তি ও নেতৃত্ব বিকাশে উৎসাহিতকারী প্ল্যাটফর্ম। আমাদের উদ্দেশ্য, বাংলাদেশের প্রতিটি তরুণকে ডিজিটাল দক্ষতায় সমৃদ্ধ করে গড়ে তোলা একটি স্মার্ট জাতি।</p>
+  </section>  <section id="sonarBangla">
+    <h2>সোনার বাংলা - বাংলাদেশ ইয়ুথ আইসিটি ফোরাম এ আই</h2>
+    <p>সোনার বাংলা প্রকল্পের মাধ্যমে আমরা কৃত্রিম বুদ্ধিমত্তা, অটোমেশন ও উদ্ভাবনী প্রযুক্তি ব্যবহার করে একটি ডিজিটাল ও স্মার্ট বাংলাদেশ গড়ে তোলার লক্ষ্যে কাজ করছি।</p>
+  </section>  <section id="join">
+    <h2>আমাদের সাথে যুক্ত হোন</h2>
+    <p>আপনি যদি প্রযুক্তি ভালোবাসেন, নেতৃত্ব দিতে চান এবং পরিবর্তনের অংশ হতে চান — তবে আজই আমাদের সদস্য হোন। মেম্বারশিপের জন্য ফর্ম পূরণ করুন এবং আপনার যাত্রা শুরু করুন BYIF-এর সাথে।</p>
   </section>  <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?person,leader" alt="Samir">
-        <h3>Samir Ahmed</h3>
-        <p>Founder & Developer. Class 9 Student passionate about coding, education, and digital innovation.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?woman,teacher" alt="Fatema">
-        <h3>Fatema Akter</h3>
-        <p>Event Coordinator. Leads training & bootcamp operations in rural areas.</p>
-      </div>
-    </div>
+    <h2>আমাদের টিম</h2>
+    <p>BYIF-এর টিমে রয়েছে দেশের বিভিন্ন প্রান্তের প্রতিভাবান তরুণ ও তরুণী, যারা নেতৃত্ব, উন্নয়ন এবং প্রযুক্তি খাতে অভিজ্ঞ।</p>
+  </section>  <section id="community">
+    <h2>কমিউনিটি</h2>
+    <p>আমাদের কমিউনিটি সারাদেশজুড়ে ছড়িয়ে থাকা সদস্যদের নিয়ে গঠিত। একে অপরকে সহযোগিতা, উৎসাহ ও জ্ঞান ভাগাভাগির মাধ্যমে আমরা তৈরি করছি একটি শক্তিশালী প্রযুক্তিনির্ভর সমাজ।</p>
   </section>  <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <h2>যোগাযোগ</h2>
+    <p>ঠিকানা: টাঙ্গাইল টাওয়ার, ময়মনসিংহ রোড, টাঙ্গাইল সদর<br>
+    মোবাইল: ০১৮৩১৯৯২৫৪৫<br>
+    ইমেইল: web.samirtalukder@gmail.com</p>
   </section>  <footer>
-    <p>&copy; 2025 Bangladesh Youth ICT Forum. All rights reserved.</p>
-  </footer>
-</body>
+    <p>&copy; 2025 বাংলাদেশ ইয়ুথ আইসিটি ফোরাম (BYIF)। সর্বস্বত্ব সংরক্ষিত।</p>
+  </footer></body>
 </html>
